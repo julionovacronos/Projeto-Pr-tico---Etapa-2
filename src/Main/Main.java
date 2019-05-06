@@ -12,7 +12,9 @@ package Main;
 public class Main {
     public static void main(String[] args) {
 
-        boolean teste;
+       jCadastroUsuario cadastro = new jCadastroUsuario();
+       cadastro.setEnabled(true);
+       cadastro.setVisible(true);
         
         
         

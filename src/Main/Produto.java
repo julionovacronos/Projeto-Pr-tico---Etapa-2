@@ -8,19 +8,20 @@ package Main;
 
 public class Produto {
 
-    protected double id;
-    protected String nome;
-    protected double preco;
-    protected boolean pronto;
+    private int id;
+    private String nome;
+    private double preco;
+    private String observacao;
 
-    public Produto(double id, String nome, double preco, boolean pronto) {
+    public Produto(int id, String nome, double preco, String observacao) {
         this.id = id;
         this.nome = nome;
         this.preco = preco;
-        this.pronto = pronto;
+        this.observacao = observacao;
+     
     }
 
-    public void setId(double id) {
+    public void setId(int id) {
         if(id>0){
             this.id = id;
         }else{
@@ -39,10 +40,12 @@ public class Produto {
             System.out.println("Preço Invalido.");
         }
     }
-    
-    public void setPronto(boolean pronto){
-        this.pronto=pronto;
+
+    public void setObservacao(String observacao) {
+        this.observacao = observacao;
     }
+    
+    
     
     public double getId() {
         return id;
@@ -55,12 +58,11 @@ public class Produto {
     public double getPreco() {
         return preco;
     }
-    
-    public boolean getPronto(){
-        return pronto;
+
+    public String getObservacao() {
+        return observacao;
     }
-    
-    
+       
     
     
     

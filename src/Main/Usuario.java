@@ -7,21 +7,21 @@ package Main;
 
 public class Usuario {
     
-    private double id;
+    private int id;
     private String nome;
     private String login;
     private String senha;
 
-    public Usuario(double id, String nome, String login, String senha) {
+    public Usuario(int id, String nome, String login, String senha) {
         this.id = id;
         this.nome = nome;
         this.login = login;
         this.senha = senha;
     }
 
-    public void setId(double id) {
+    public void setId(int id) {
         if(id>0){
-        this.id = id;
+            this.id = id;
         }else{
             System.out.println("ID inválido.");
         }
