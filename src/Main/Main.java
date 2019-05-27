@@ -14,13 +14,12 @@ public class Main {
 
   
        Pedido pedido = new Pedido();
-       pedido.setIDusuario(123);
-       pedido.setMesa(1);
+       pedido.setMesa(4);
        pedido.setPagamento(true);
        pedido.setStatus(true);
        pedido.setPronto(true);
        pedido.setTipo(true);
-       pedido.setID(1);
+       pedido.setID(5);
        PedidoController p1 = new PedidoController();
        p1.salvar(pedido);
        
