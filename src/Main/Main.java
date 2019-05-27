@@ -12,7 +12,7 @@ package Main;
 public class Main {
     public static void main(String[] args) {
 
-       Produto produto = new Produto();
+  
        Pedido pedido = new Pedido();
        pedido.setIDusuario(123);
        pedido.setMesa(1);
@@ -20,8 +20,9 @@ public class Main {
        pedido.setStatus(true);
        pedido.setPronto(true);
        pedido.setTipo(true);
+       pedido.setID(1);
        PedidoController p1 = new PedidoController();
-       //p1.salvar(pedido);
+       p1.salvar(pedido);
        
         
         

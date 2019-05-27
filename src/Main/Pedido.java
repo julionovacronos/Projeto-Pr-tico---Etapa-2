@@ -5,7 +5,6 @@
  */
 package Main;
 
-import java.util.ArrayList;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -30,6 +29,9 @@ public class Pedido {
     @Column
     private boolean status;
 
+    public Pedido() {
+    }
+
     public Pedido(int ID, int mesa, boolean pronto, boolean pagamento, boolean tipo, int IDusuario) {
         
         this.ID = ID;
@@ -40,9 +42,7 @@ public class Pedido {
         this.IDusuario = IDusuario;
     }
 
-    Pedido() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 
     
 
