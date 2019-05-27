@@ -6,19 +6,32 @@
 package Main;
 
 import java.util.ArrayList;
-
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+@Entity
 public class Pedido {
 
-    private ArrayList<Produto> produtos = new ArrayList<Produto>();
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int ID;
+    @Column
     private int mesa;
+    @Column
     private boolean pronto;
+    @Column
     private boolean pagamento;
+    @Column
     private boolean tipo;
+    @Column
     private int IDusuario;
+    @Column
     private boolean status;
 
     public Pedido(int ID, int mesa, boolean pronto, boolean pagamento, boolean tipo, int IDusuario) {
+        
         this.ID = ID;
         this.mesa = mesa;
         this.pronto = pronto;
@@ -27,13 +40,11 @@ public class Pedido {
         this.IDusuario = IDusuario;
     }
 
-    public ArrayList<Produto> getProdutos() {
-        return produtos;
+    Pedido() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public void setProdutos(ArrayList<Produto> produtos) {
-        this.produtos = produtos;
-    }
+    
 
     public int getID() {
         return ID;
