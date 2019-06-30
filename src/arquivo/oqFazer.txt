@@ -1,0 +1,8 @@
+tela login->menu->pedido
+			->cadastrar pedido
+			->listar pedido
+			->deletar pedido
+		->produto
+			->cadastrar produto
+			->
+		->usuario
