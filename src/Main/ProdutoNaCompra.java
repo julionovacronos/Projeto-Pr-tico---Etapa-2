@@ -18,6 +18,13 @@ import javax.persistence.Id;
  */
 @Entity
 public class ProdutoNaCompra implements Serializable{
+
+    public ProdutoNaCompra(int ID, int IDcompra, int IDproduto, int quantidade) {
+        this.ID = ID;
+        this.IDcompra = IDcompra;
+        this.IDproduto = IDproduto;
+        this.quantidade = quantidade;
+    }
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     int ID;

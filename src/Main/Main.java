@@ -7,6 +7,7 @@ package Main;
 
 import Controller.PedidoController;
 import Controller.ProdutoController;
+import Controller.ProdutoNaCompraController;
 import Controller.UsuarioController;
 import java.util.Iterator;
 import java.util.List;
@@ -20,9 +21,9 @@ public class Main {
 
   
        
-       Produto prod = new Produto(10, "ze", 2, "alo internet");
-        ProdutoController dao = new ProdutoController();
-        dao.salvar(prod);
+      ProdutoNaCompra prod = new ProdutoNaCompra(1, 2, 3, 4);
+      ProdutoNaCompraController dao = new ProdutoNaCompraController();
+      dao.salvar(prod);
         
         
     }
