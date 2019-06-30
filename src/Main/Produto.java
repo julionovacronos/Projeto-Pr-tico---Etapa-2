@@ -5,14 +5,27 @@
  */
 package Main;
 
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-public class Produto {
-
+@Entity
+public class Produto implements Serializable{
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
+    @Column
     private String nome;
+    @Column
     private double preco;
+    @Column
     private String observacao;
-
+    public Produto(){
+        
+    }
     public Produto(int id, String nome, double preco, String observacao) {
         this.id = id;
         this.nome = nome;
@@ -21,9 +34,7 @@ public class Produto {
      
     }
 
-    Produto() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 
     public void setId(int id) {
         if(id>0){

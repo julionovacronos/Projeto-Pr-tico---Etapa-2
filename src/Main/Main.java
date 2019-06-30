@@ -5,6 +5,12 @@
  */
 package Main;
 
+import Controller.PedidoController;
+import Controller.ProdutoController;
+import Controller.UsuarioController;
+import java.util.Iterator;
+import java.util.List;
+
 /**
  *
  * @author Francisco Carlos
@@ -13,17 +19,10 @@ public class Main {
     public static void main(String[] args) {
 
   
-       Pedido pedido = new Pedido();
-       pedido.setMesa(4);
-       pedido.setPagamento(true);
-       pedido.setStatus(true);
-       pedido.setPronto(true);
-       pedido.setTipo(true);
-       pedido.setID(5);
-       PedidoController p1 = new PedidoController();
-       p1.salvar(pedido);
        
-        
+       Produto prod = new Produto(10, "ze", 2, "alo internet");
+        ProdutoController dao = new ProdutoController();
+        dao.salvar(prod);
         
         
     }

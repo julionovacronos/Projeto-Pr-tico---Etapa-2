@@ -9,5 +9,8 @@
     <property name="hibernate.hbm2ddl.auto">update</property>
     <mapping class="Main.Pedido"/>
     <mapping class="Main.Pedido"/>
+    <mapping class="Main.Usuario"/>
+    <mapping class="Main.Produto"/>
+    <mapping class="Main.ProdutoNaCompra"/>
   </session-factory>
 </hibernate-configuration>
