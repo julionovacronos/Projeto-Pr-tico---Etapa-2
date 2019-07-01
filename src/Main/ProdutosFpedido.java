@@ -5,6 +5,8 @@
  */
 package Main;
 
+import Model.Pedido;
+import Model.ProdutoNaCompra;
 import Controller.PedidoController;
 import Controller.ProdutoController;
 import Controller.ProdutoNaCompraController;

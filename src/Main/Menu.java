@@ -5,6 +5,8 @@
  */
 package Main;
 
+import Model.Usuario;
+import Model.Pedido;
 import Controller.PedidoController;
 import java.util.Iterator;
 import java.util.List;

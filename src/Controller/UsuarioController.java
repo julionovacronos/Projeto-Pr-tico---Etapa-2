@@ -5,8 +5,8 @@
  */
 package Controller;
 
-import Main.Pedido;
-import Main.Usuario;
+import Model.Pedido;
+import Model.Usuario;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

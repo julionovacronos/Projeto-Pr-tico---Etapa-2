@@ -5,8 +5,8 @@
  */
 package Controller;
 
-import Main.Produto;
-import Main.ProdutoNaCompra;
+import Model.Produto;
+import Model.ProdutoNaCompra;
 import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

@@ -5,6 +5,7 @@
  */
 package Main;
 
+import Model.Usuario;
 import Controller.UsuarioController;
 import javax.swing.JOptionPane;
 

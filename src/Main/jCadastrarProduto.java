@@ -5,6 +5,7 @@
  */
 package Main;
 
+import Model.Produto;
 import Controller.ProdutoController;
 import javax.swing.JOptionPane;
 
@@ -148,6 +149,7 @@ public class jCadastrarProduto extends javax.swing.JFrame {
         Produto prod = new Produto(1, jNomeProd.getText(), preco, jDescricao.getText());
         ProdutoController dao = new ProdutoController();
         dao.salvar(prod);
+        JOptionPane.showMessageDialog(rootPane, "produto cadastrado com sucesso");
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
