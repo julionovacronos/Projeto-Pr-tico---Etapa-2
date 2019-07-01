@@ -5,6 +5,7 @@
  */
 package Main;
 
+import Controller.UsuarioController;
 import javax.swing.JOptionPane;
 
 /**
@@ -39,7 +40,7 @@ public class jCadastroUsuario extends javax.swing.JFrame {
         jSenha = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Cadastro de Usuario");
+        setTitle("IPP CADASTRO DE USUARIO");
 
         jLabel1.setText("Nome:");
 
@@ -122,8 +123,16 @@ public class jCadastroUsuario extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Usuario user = new Usuario(90, JnomeUsuario.getText(), jUsuario.getText(), jSenha.getText());
-        System.out.println(user.getNome());
-        JOptionPane.showMessageDialog(this, "Usuario cadastrado com sucesso");
+        System.out.println(user.getSenha());
+        if(user.getSenha().equals("")||user.getLogin().equals("")||user.getNome().equals("")){
+            JOptionPane.showMessageDialog(rootPane, "Campo vazio");
+        }else{
+            UsuarioController dao = new UsuarioController();
+            dao.salvar(user);
+            JOptionPane.showMessageDialog(rootPane, "Usuario Cadastrado com sucesso");
+            this.dispose();
+        }
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -133,38 +142,7 @@ public class jCadastroUsuario extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(jCadastroUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(jCadastroUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(jCadastroUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(jCadastroUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new jCadastroUsuario().setVisible(true);
-            }
-        });
-    }
+  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField JnomeUsuario;

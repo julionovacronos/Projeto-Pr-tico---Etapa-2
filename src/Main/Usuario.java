@@ -50,11 +50,9 @@ public class Usuario implements Serializable{
     }
 
     public void setSenha(String senha) {
-        if(senha.length()>6){
+        
         this.senha = senha;
-        }else{
-            System.out.println("A senha é inválida, ela necessita contem mais de 6 digitos.");
-        }
+       
     }
 
     public double getId() {

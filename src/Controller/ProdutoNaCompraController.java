@@ -37,7 +37,7 @@ public class ProdutoNaCompraController {
         Session session;
         session = conexao.openSession();
         Transaction tx = session.beginTransaction();
-        List<ProdutoNaCompra> lista = (List<ProdutoNaCompra>)session.createQuery("From Produto").list();
+        List<ProdutoNaCompra> lista = (List<ProdutoNaCompra>)session.createQuery("From ProdutoNaCompra").list();
         tx.commit();
         session.close();   
         return lista;

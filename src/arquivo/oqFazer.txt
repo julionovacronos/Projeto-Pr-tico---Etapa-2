@@ -4,5 +4,8 @@ tela login->menu->pedido
 			->deletar pedido
 		->produto
 			->cadastrar produto
-			->
+			->lista de produtos
+                        ->alterar produto
 		->usuario
+                        ->cadastrar usuario
+                        ->trocar senha

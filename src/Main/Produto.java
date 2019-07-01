@@ -62,7 +62,7 @@ public class Produto implements Serializable{
     
     
     
-    public double getId() {
+    public int getId() {
         return id;
     }
 

@@ -11,6 +11,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 /**
  *
@@ -19,19 +21,24 @@ import javax.persistence.Id;
 @Entity
 public class ProdutoNaCompra implements Serializable{
 
-    public ProdutoNaCompra(int ID, int IDcompra, int IDproduto, int quantidade) {
+    public ProdutoNaCompra(int ID, Pedido ped, Produto prod, int quantidade) {
         this.ID = ID;
-        this.IDcompra = IDcompra;
-        this.IDproduto = IDproduto;
+        this.ped = ped;
+        this.prod = prod;
         this.quantidade = quantidade;
     }
+
+   
+    
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     int ID;
-    @Column
-    int IDcompra;
-    @Column
-    int IDproduto;
+    @ManyToOne
+    @JoinColumn(name = "Id_pedido")
+    Pedido ped;
+    @ManyToOne
+    @JoinColumn(name = "Id_produto")
+    Produto prod;
     @Column
     int quantidade;
 
@@ -39,10 +46,25 @@ public class ProdutoNaCompra implements Serializable{
     public int hashCode() {
         int hash = 5;
         hash = 89 * hash + this.ID;
-        hash = 89 * hash + this.IDcompra;
-        hash = 89 * hash + this.IDproduto;
+       
         hash = 89 * hash + this.quantidade;
         return hash;
+    }
+
+    public Pedido getPed() {
+        return ped;
+    }
+
+    public void setPed(Pedido ped) {
+        this.ped = ped;
+    }
+
+    public Produto getProd() {
+        return prod;
+    }
+
+    public void setProd(Produto prod) {
+        this.prod = prod;
     }
 
     @Override
@@ -57,12 +79,7 @@ public class ProdutoNaCompra implements Serializable{
         if (this.ID != other.ID) {
             return false;
         }
-        if (this.IDcompra != other.IDcompra) {
-            return false;
-        }
-        if (this.IDproduto != other.IDproduto) {
-            return false;
-        }
+       
         if (this.quantidade != other.quantidade) {
             return false;
         }
@@ -80,21 +97,6 @@ public class ProdutoNaCompra implements Serializable{
         this.ID = ID;
     }
 
-    public int getIDcompra() {
-        return IDcompra;
-    }
-
-    public void setIDcompra(int IDcompra) {
-        this.IDcompra = IDcompra;
-    }
-
-    public int getIDproduto() {
-        return IDproduto;
-    }
-
-    public void setIDproduto(int IDproduto) {
-        this.IDproduto = IDproduto;
-    }
 
     public int getQuantidade() {
         return quantidade;

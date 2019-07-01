@@ -6,6 +6,10 @@
 package Controller;
 
 import Main.Pedido;
+import Main.Pedido;
+import Main.Pedido;
+import Main.Pedido;
+import Main.Pedido;
 import Main.Usuario;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -35,6 +39,7 @@ public class PedidoController {
        session.close();
        
    }
+   
    public List<Pedido> listar(){
        try{
            
@@ -73,7 +78,18 @@ public class PedidoController {
         session.close();   
         return c;
    }
-   
+   public void merge(Pedido ped){
+    try{
+            Session session;
+            session = conexao.openSession();
+            Transaction tx = session.beginTransaction();
+            session.merge(ped);
+            tx.commit();
+            session.close();   
+        }catch(Exception e){
+            System.out.println(e);
+        }
+    }
    public Pedido buscar(int Uid){
        try{
            Session session;

@@ -87,5 +87,12 @@ public class UsuarioController {
        }
        return null;
    }
-   
+   public void merge(Usuario user){
+        Session session;
+        session = conexao.openSession();
+        Transaction tx = session.beginTransaction();
+        session.merge(user);
+        tx.commit();
+        session.close();   
+   }
 }

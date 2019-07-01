@@ -20,29 +20,34 @@ public class Pedido implements Serializable{
     @Column
     private int mesa;
     @Column
-    private boolean pronto;
-    @Column
     private boolean pagamento;
-    @Column
-    private boolean tipo;
     @Column
     private int IDusuario;
     @Column
     private boolean status;
+    @Column
+    private float total;
 
+    public float getTotal() {
+        return total;
+    }
+
+    public void setTotal(float total) {
+        this.total = total;
+    }
     public Pedido() {
     }
 
-    public Pedido(int ID, int mesa, boolean pronto, boolean pagamento, boolean tipo, int IDusuario) {
-        
+    public Pedido(int ID, int mesa, int IDusuario) {
         this.ID = ID;
         this.mesa = mesa;
-        this.pronto = pronto;
-        this.pagamento = pagamento;
-        this.tipo = tipo;
+        this.pagamento = false;
         this.IDusuario = IDusuario;
+        this.status = false;
+        this.total = 0;
     }
 
+  
     
 
     
@@ -63,13 +68,9 @@ public class Pedido implements Serializable{
         this.mesa = mesa;
     }
 
-    public boolean isPronto() {
-        return pronto;
-    }
+   
 
-    public void setPronto(boolean pronto) {
-        this.pronto = pronto;
-    }
+   
 
     public boolean isPagamento() {
         return pagamento;
@@ -79,13 +80,9 @@ public class Pedido implements Serializable{
         this.pagamento = pagamento;
     }
 
-    public boolean isTipo() {
-        return tipo;
-    }
+    
 
-    public void setTipo(boolean tipo) {
-        this.tipo = tipo;
-    }
+   
 
     public int getIDusuario() {
         return IDusuario;
@@ -107,9 +104,6 @@ public class Pedido implements Serializable{
         this.status = true;
     }   
     
-    public void EstaPronto(){
-        this.pronto = true;
-    }
-    
+   
     
 }
